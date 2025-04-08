@@ -17,7 +17,8 @@ export interface Client {
 })
 export class ClientesService {
   // URL correcta, verificada en Postman
-  private apiUrl = 'http://localhost:1337/api/clientes';
+  private apiUrl = 'https://strapi-backend-tlfm.onrender.com/api/clientes';
+
 
   constructor(private http: HttpClient) {}
 
