@@ -1,0 +1,27 @@
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()" class="big-form">
+  <div class="field">
+    <label>Nombre</label>
+    <input type="text" formControlName="nombre" placeholder="Ingresa el nombre" />
+  </div>
+  <div class="field">
+    <label>Apellido</label>
+    <input type="text" formControlName="apellido" placeholder="Ingresa el apellido" />
+  </div>
+  <div class="field">
+    <label>Número de Documento</label>
+    <input type="text" formControlName="numero_documento" placeholder="Ingresa el documento" />
+  </div>
+  <div class="field">
+    <label>Dirección</label>
+    <input type="text" formControlName="direccion" placeholder="Ingresa la dirección" />
+  </div>
+  <div class="field">
+    <label>Teléfono</label>
+    <input type="text" formControlName="telefono" placeholder="Ingresa el teléfono" />
+  </div>
+  <div class="button-container">
+    <button type="submit" [disabled]="clientForm.invalid" class="submit-button">
+      Crear Cliente
+    </button>
+  </div>
+</form>

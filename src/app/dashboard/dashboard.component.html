@@ -1,0 +1,73 @@
+<div class="container p-4" style="text-align: center;">
+
+  <!-- Título principal -->
+  <h2 style="margin-bottom: 20px;">Dashboard 📈</h2>
+
+  <!-- Bloque con tarjetas de indicadores -->
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+    <mat-card *ngFor="let indicador of indicadores" 
+              style="width: 250px; text-align: center;">
+
+      <!-- Encabezado con altura mínima y texto centrado -->
+      <mat-card-header style="display: flex; justify-content: center; align-items: center; min-height: 60px;">
+        <mat-card-title>{{ indicador.nombre }}</mat-card-title>
+      </mat-card-header>
+
+      <!-- Contenido centrado verticalmente para el valor y la fecha -->
+      <mat-card-content style="min-height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <p style="font-size: 24px; font-weight: bold; margin: 0;">
+          {{ indicador.valor | number:'1.2-2' }}
+        </p>
+        <p style="font-size: 12px; color: gray; margin: 0;">
+          Actualizado: {{ indicador.fecha | date:'dd/MM/yyyy' }}
+        </p>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+  <hr style="margin: 20px 0;">
+
+  <!-- Formulario de filtros para el gráfico -->
+  <form [formGroup]="filterForm" (ngSubmit)="onGenerarGrafico()"
+        style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px;">
+    <!-- Selección del tipo de indicador -->
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de Indicador</mat-label>
+      <mat-select formControlName="tipo">
+        <mat-option value="dolar">Dólar</mat-option>
+        <mat-option value="uf">UF</mat-option>
+        <mat-option value="utm">UTM</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Fecha de Inicio -->
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha de Inicio</mat-label>
+      <input matInput [matDatepicker]="startPicker" formControlName="fechaInicio">
+      <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+      <mat-datepicker #startPicker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Fecha de Fin -->
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha de Fin</mat-label>
+      <input matInput [matDatepicker]="endPicker" formControlName="fechaFin">
+      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+      <mat-datepicker #endPicker></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      Generar Gráfico
+    </button>
+  </form>
+
+  <hr style="margin: 20px 0;">
+
+  <!-- Gráfico temporal -->
+  <app-economic-chart
+    [data]="valores"
+    [labels]="fechas"
+    [label]="nombreIndicador">
+  </app-economic-chart>
+</div>

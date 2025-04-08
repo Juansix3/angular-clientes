@@ -1,0 +1,53 @@
+/* Contenedor del formulario: apilación vertical y espacio entre campos */
+.big-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* Cada grupo de campo del formulario */
+  .field {
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para las etiquetas con fuente más grande */
+  .field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 18px;   /* Aumentamos el tamaño de la fuente de la etiqueta */
+    color: #444;
+  }
+  
+  /* Estilos para los inputs, aumentando tamaño, padding y fuente */
+  .field input {
+    width: 100%;
+    padding: 16px;        /* Más padding para hacer el campo más grande */
+    font-size: 18px;      /* Aumentamos tamaño de fuente en el input */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f9fd;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos para el botón, centrado */
+  .button-container {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .submit-button {
+    margin-top: 10px;
+    padding: 14px 28px;   /* Botón más grande */
+    font-size: 18px;      /* Botón con texto mayor */
+    border: none;
+    background-color: #3f51b5;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

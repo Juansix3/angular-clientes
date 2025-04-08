@@ -1,0 +1,34 @@
+<div class="container" style="max-width: 400px; margin: 0 auto; text-align: center; padding: 20px;">
+    <h2>Editar Cliente</h2>
+    <form [formGroup]="clientForm" (ngSubmit)="onUpdateClient()">
+      <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 15px;">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 15px;">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="apellido">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 15px;">
+        <mat-label>Número de Documento</mat-label>
+        <input matInput formControlName="numero_documento">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 15px;">
+        <mat-label>Dirección</mat-label>
+        <input matInput formControlName="direccion">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 15px;">
+        <mat-label>Teléfono</mat-label>
+        <input matInput formControlName="telefono">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">
+        Actualizar Cliente
+      </button>
+    </form>
+  </div>
+  

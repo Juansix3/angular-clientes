@@ -1,0 +1,23 @@
+<h2>Lista de Clientes</h2>
+
+<!-- Aquí se muestra la lista de clientes -->
+<ul *ngIf="!isLoading && clients && clients.length">
+  <li *ngFor="let client of clients">
+    <p>
+      <strong>Nombre:</strong> {{ client.nombre }}<br>
+      <strong>Apellido:</strong> {{ client.apellido }}<br>
+      <strong>Número de Documento:</strong> {{ client.numero_documento }}<br>
+      <strong>Dirección:</strong> {{ client.direccion }}<br>
+      <strong>Teléfono:</strong> {{ client.telefono }}
+    </p>
+    <!-- Botón para eliminar -->
+    <button mat-button color="warn" (click)="deleteClient(client.id)">Eliminar</button>
+    <!-- Botón para editar (usando RouterLink para navegar a la ruta de edición) -->
+    <button mat-button color="primary" [routerLink]="['/clientes/editar', client.id]">Editar</button>
+    <hr>
+  </li>
+</ul>
+
+<div *ngIf="!isLoading && (!clients || clients.length === 0)">
+  No hay clientes registrados.
+</div>
