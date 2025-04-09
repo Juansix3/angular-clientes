@@ -1,59 +1,79 @@
-# NombreDelProyecto
+# angular-clientes
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+Este es un proyecto desarrollado con **Angular** que implementa un Dashboard informativo y un sistema de registro y gestión de clientes, utilizando Angular Material, gráficos con `Chart.js`, consumo de APIs y formularios reactivos.
 
-## Development server
+> ⚠️ **Este proyecto se encuentra en etapa de revisión** y puede contener errores menores.
 
-To start a local development server, run:
+---
 
-```bash
+## 🚀 Funcionalidades principales
+
+- 📊 Visualización de indicadores económicos de Chile (Dólar, UF, UTM) usando la API de [mindicador.cl](https://mindicador.cl)
+- 📅 Filtro por tipo de indicador y rango de fechas con visualización en gráfico
+- 🧾 Registro y visualización de clientes
+- 🎨 Interfaz con Angular Material
+- 🌐 Navegación por rutas (`/dashboard`, `/registro`, `/clientes`)
+- ✅ Redirecciones listas para despliegue en Netlify
+
+---
+
+## 📁 Estructura del proyecto
+angular-clientes/ ├── src/ # Código fuente de la app │ ├── app/ # Componentes, servicios, rutas │ └── assets/ # Imágenes, estilos globales ├── public/ # Archivos públicos ├── .gitignore ├── angular.json # Configuración Angular CLI ├── package.json # Dependencias y scripts ├── README.md # Este archivo ├── _redirects # Redirección para Netlify 
+
+---
+
+## 🛠️ Requisitos
+
+- Node.js v14 o superior
+- Angular CLI instalado globalmente (opcional para desarrollo)
+
+---
+
+## 🧪 Instalación y ejecución local
+
+1. Clona el repositorio:
+
+`` bash
+git clone https://github.com/Juansix3/angular-clientes.git
+cd angular-clientes
+
+## 2. instalar dependencias 
+
+npm install
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Abrir tu navegador en http://localhost:4200/
 
-## Code scaffolding
+## 🧱 Compilación para producción
+npm run build
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+## 🧪 Pruebas unitarias
 ng test
-```
 
-## Running end-to-end tests
+## 🔗 Despliegue
+Netlify
+## Configura el directorio de salida: dist/nombre-del-proyecto
 
-For end-to-end (e2e) testing, run:
+## Asegúrate de tener el archivo _redirects en la raíz o dentro de src/
 
-```bash
-ng e2e
-```
+Vercel (opcional) (Me producia muchos errores por lo que se ejecuto en Netlify)
+Comando de build: npm run build
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Output directory: dist/nombre-del-proyecto
 
-## Additional Resources
+Asegúrate de tener el archivo vercel.json configurado correctamente
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📎 Enlaces importantes
+Repositorio: https://github.com/Juansix3/angular-clientes
+
+## API utilizada: mindicador.cl
+
+## Despliegue en Netlify: https://actividad-juan.netlify.app
+
+## 📝 Estado del proyecto
+
+Proyecto creado con fines de prueba. Algunas rutas pueden presentar errores al recargar directamente en entornos sin configuración de redirección (como Vercel). Se recomienda evaluar en local o en Netlify.
+
+📧 Autor
+Juan Carrasquero
+Contacto: jjcoviol@gmail.com
